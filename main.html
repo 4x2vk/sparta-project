@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sparta</title>
+    <link rel="icon" type="image/x-icon" href="./src/image/favicon-32x32.png">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/teams/team-2/assets/css/team-2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,23 +19,6 @@
             font-style: normal;
         }
 
-        .cover {
-            height: 400px;
-            color: white;
-
-            background-image: url('https://img.goodfon.com/original/1920x1080/0/6d/sparta-dospekhi-oruzhie-voin.jpg');
-            background-position: center;
-            background-size: cover;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-
-            margin: 0px auto 20px auto;
-        }
-
         .row {
             display: flex;
             flex-direction: row;
@@ -46,7 +30,7 @@
         }
 
         .fs-4 {
-            color: red;
+            color: #a40000;
             font-weight: bold;
         }
 
@@ -96,7 +80,6 @@
             /* 둥근 모서리가 잘릴 수 있게 */
         }
 
-
         .side-nav {
             position: fixed;
             top: 50%;
@@ -135,8 +118,117 @@
             width: 400px;
             height: 400px;
         }
-    </style>
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            gap: 40px;
+            max-width: 900px;
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 10px solid #f3f3f3;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-content {
+            flex: 1;
+        }
+
+        .role {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .description {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: white;
+            border: 2px solid #a40000;
+            color: #a40000;
+        }
+
+        .btn-primary:hover {
+            background-color: #a40000;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #E8C999;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #F8EEDF;
+            color: #333;;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 
     <script>
 
@@ -152,10 +244,10 @@
                 </svg> <span class="fs-4">Team Sparta</span> </a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="https://github.com/4x2vk/sparta-project" class="nav-link active"
-                        aria-current="page" style="background-color: red; color: white;">Github</a></li>
+                        aria-current="page" style="background-color: #a40000; color: white;">Project Github</a></li>
                 <li class="nav-item"><a
                         href="https://www.notion.so/native/teamsparta/9-2222dc3ef5148057a35ee8502c0d726a?deepLinkOpenNewTab=true"
-                        class="nav-link" style="color: red;">Notion</a></li>
+                        class="nav-link" style="color: #a40000;">Notion</a></li>
             </ul>
         </header>
 
@@ -376,110 +468,150 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section id="section2">
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span
-                        class="text-body-secondary">See
-                        for yourself.</span></h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
-                    how
-                    this layout would work with some actual real-world content in place.</p>
+        <section id="section2">
+           <div class="wrapper">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="./src/image/kuandyk-photo.png"
+                        alt="Profile Image" />
+                </div>
+                <div class="profile-content">
+                    <div class="role">Warrior Hero</div>
+                    <div class="name">박은지</div>
+                    <div class="description">
+                        The bravest of Sparta. He stood with only 300 against an army of thousands. His courage,
+                        determination, and leadership still echo through history.
+                    </div>
+                    <div class="buttons">
+                        <a href="https://github.com/eunji-0508">
+                           <button class="btn btn-primary">Github</button> 
+                        </a>
+                        <a href="https://blog.naver.com/cxzxa">
+                            <button class="btn btn-secondary">Blog</button>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-5 order-md-1">
-                <img class="featurette-image img-fluid mx-auto"
-                    src="https://img.goodfon.com/original/1920x1080/0/6d/sparta-dospekhi-oruzhie-voin.jpg"
-                    alt="Featurette 이미지" />
-            </div>
-        </div>
-    </section>
-    <section id="section3">
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
-                        class="text-body-secondary">It’ll blow your mind.</span></h2>
-                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
-            </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto"
-                    src="https://img.goodfon.com/original/1920x1080/0/6d/sparta-dospekhi-oruzhie-voin.jpg"
-                    alt="Featurette 이미지" />
-            </div>
-        </div>
-    </section>
-    <section id="section4">
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span
-                        class="text-body-secondary">See
-                        for yourself.</span></h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
-                    how
-                    this layout would work with some actual real-world content in place.</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img class="featurette-image img-fluid mx-auto"
-                    src="https://img.goodfon.com/original/1920x1080/0/6d/sparta-dospekhi-oruzhie-voin.jpg"
-                    alt="Featurette 이미지" />
-            </div>
-        </div>
-    </section>
-    <section id="section5">
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
-                        class="text-body-secondary">It’ll blow your mind.</span></h2>
-                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
-            </div>
-            <div class="col-md-5"> <img class="featurette-image img-fluid mx-auto"
-                    src="https://img.goodfon.com/original/1920x1080/0/6d/sparta-dospekhi-oruzhie-voin.jpg"
-                    alt="Featurette 이미지" />
+        </div> 
+        </section>  
+        <section id="section3">
+            <div class="wrapper">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="https://img.goodfon.com/original/1920x1080/0/6d/sparta-dospekhi-oruzhie-voin.jpg"
+                        alt="Profile Image" />
+                </div>
+                <div class="profile-content">
+                    <div class="role">Warrior Hero</div>
+                    <div class="name">유운선</div>
+                    <div class="description">
+                        The bravest of Sparta. He stood with only 300 against an army of thousands. His courage,
+                        determination, and leadership still echo through history.
+                    </div>
+                    <div class="buttons">
+                        <a href="https://github.com/dbdnstjs">
+                           <button class="btn btn-primary">Github</button> 
+                        </a>
+                        <a href="https://whimsical-mouse-50f.notion.site/1-2229ca52079680809afceaa1e6d700d6">
+                            <button class="btn btn-secondary">Blog</button>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <div class="container">
-        <footer class="py-3 border-top position-relative text-center">
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExIVFhMXFhUVGBgVFRgYFRgYFxYWFxcXGRUYHSggGBolHRUXITEjJSkrLi4uFx8zODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAgcBAwgGBQT/xABDEAACAgEBBQUEBQkGBwEAAAAAAQIDEQQFBhIhMQcTQVFhFCJxgQgyQpGhI0NSYnKSscHCFSRTY7PhMzR0gqPD8DX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AvEAADEZZISkSgBIAAAAAAItgSBDHqSTAyAAAAAAAAYjLKyQlInHoBkAAAAAAItgSBBEkwMgAAa5SJyRGMQEYkwAAAAAAAQRMw0BEkkEjIAAAAAANcpEprKMRiBmMSQAAAAAAAIRJmGgIkkgkZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADVq9TCqErLJKMIRc5SfJRjFZbfokjnLfrtf1WpnKGknLT6VNpOHK6z1c+sPhHGM82+RZ3bxrXXsmaTaVttVcsdeHLm18+DHzPF9mW5Gn0qq2htWdNfeYWmpuaSTlzjOSlycsc0vDPE+fQPCaHbu2YJX1Xa/h65busr88+9mLXxPcbn9ulkWq9oVqyPJd9UlGa9ZV/Vl/24+DLz10rVBumMJWfZVk3CHzlGMn+H3FT767h7V1vFKdeypSfjCFkLvRd61l/N49ALQ2JtvT6upW6a6Ftb8Yvmn1xKL5xl6NJn0DkHVbO2nsi5TlG/S2dFOL9yXjw8cG4TXLnHL9Ue42B276utKOqor1CWFxxfdWPzbwnFv4KIF2byy16h/cVpXNLP8AeXZh+iUMY5eLfj4dTw/Z72rS1eqeh1lEadTmcYuDfA5wzxwcZNuD9145tPGPLPndudvjdbjpNJwWNfXumpKL81CK975tfBnj+x7ZV+r2tVcuJqqbvusefVpN/pSlyx4+8/BgdSAAAAAAAAAAAAAABGTAkCGPiSiwMgAAAAAAAGIvJCUjyW+3aJo9mrhsl3moazGmvnLn0c30gufjzfgmB9fe3d+GuoVFmOFXUWPKymq7IynHH60FKP8A3Hg+0jcHV7R7yce7VivhCnvLMRjpYVc+FRTxOd0m3nniEVyRWe8na1tPWS4a7Hp65PEYafKm8vknb9dy8OWE/I8Pr7LZTbulOVnSTsbc8+TcueQOnd1Nh7TjspaSzUezaqqfBXclC9OmOHH3W8Yw3DnhrgRGuO8Gm5t6TX1pdP8Al75fB47tfPJzrsXerW6Vr2fVXVpdIqbdfzrlmL+aLf3W7apwlGralLhlJq+uLw4vpOVazxReH70MryQFkaLbNGsi9PqdNOqySxKjVVrE+WX3cuddy5N+621jmkVb2hdinCpX7Ny11lp5PLx/lSfX9mXPyfRF2aTU1X1xsrlCyuSUoyi1KL55TT+K/A2zl5LPw6v0WQOP9ma7SU+5qtnStsg2njU2USynhqcXGWGnlcuE9loO2Selr7nQ7O01FS6RbnN56cUpJxc305vny6lo71bD2NtKUo32VV6qPJy441amOOilGfOS8uJNeRU+9PZppdJGU/7Y07jzahKObn6RhXKTk/DOEvPAHxdudp21NS3xaudcc8o0fkkvTMfea+LZLdntN2jpLFL2iy+vK4q75ysjJeKUpZlB+q+59D8+4G7N2ruzHQz1VUeUl3rppT5fXux4J54YtSf8bh2z2O6bUaVuFFek1iTce5vstpk19WM3ZFcn4tJNPxljDCw92du1a3TV6ml+5ZHOH9aLXKUJeqaaPqFRfR0dkdNq6Zpru9QuT8JuCjNfFcCLdAABgGzEXkg5ZJxQGQAAIokYaAiSSCRkAAAAAAGuUsk5LJqssUIynN4jFOTb6JJZb+5AeB7Xd+/7OoVdLXtlyfByz3cOjta8+qjnlnPVRaOdNkbL1Gv1KqrUrLrJOUpSbfrOyyb8FzbbN++W8M9frLtTPPvy9yL+xWuUIfJYzjq8vxLT2HuHrKdlRq0tWNZtBLv7ZvhjRpsZVTb5py4llJN85J/VTAr3aeup03912c3ZY/ct1aX5S2XR16fH/Dqy8Zj70/F45Hsd2OyaqFKs2tf7NO9quivijGanL6rnnk5fqfe0+S+rRodmbuR7y6a1m0+F8EFyVefJc1UvDjlmTWeFYbRVG9m9Gp2he7tRPL6RguVdcf0YR8F69X4sD9e++5Op2bbwXR4q5N93dFfk5r+mWOsX+K5n5dhbcVa7jUV9/o5P3qm8Sg/8Sif5uxenKXSSa6e63K7Ta5U/2fteHf6SS4VbJOU4LwU8e9JLqpR96OPHljO8/Y5Zw+0bLtjqtPL3ox4o94l+rPPDYuvk/DDAxu3ti3Yeoqsha9RsjVvijNJ4x0b4fsXw6Sj9pLHlw9D6a6M4xnCSlGSUotPMZRkspp+KaZzh2d6Wdjv2Jrq7Ko6iMrKO9hKMqtRXFtTimk0nFPPPnw4+0ywuw/a1qr1GzdRlX6ObjHP6Dk04rzUZJ8+mJxwB7HenczR7QS9ppUpx5RnFuNi9OJdV6PK9DzOz+xXZtdisn31yXSFk4qtY5rlXCLfzeH45LHSMgatLpoVwjXXCMIRWIxhFRjFeSiuSRtAA+bsPYlWlVvdJ5uvt1FjfVztlxP5JYS9EfSAANmuTySmhGICMSQAAAAAAAAAAAAAAAK12T2mSnp9XtDUaeUdnwnVVRwcE7ZtznCyU05rHWt45JJ8uLmyymznrs60Ht2wNo6RSalXZ38cc8tVxnCPonKlr5sD0d/bRsqHvVaK2U/B91TBZ/aUm19x4rentp1+pThQo6Wt/4b4rWvLvWlj4xUX6laADdObm25NubbbbeXJvm8vxl6+JpBs+t+1/H/cDWfe3Y3r1mz5cWmvlDLy6371cunOVb5dFjPXyaPiJY69fBfzZFsC8djdvcWktZoveXPjokms+ldn1f3mer3a7V9navVV0U03xuubWZVVxWVFy9+UZtvlH1OYiwewrZju2tXLOFRCy58uvJVpenOxfcBeO5G9N2ov1ek1VKr1GlmsuLTjOuzLqfJvEuHGfj4dF7AqXss1/fba2xN+M1Ffs12Trj+EUW0AAAAAAAAAAAAAAAAAAAAAAAABrvfuy+D/gUD9G7WJarVUP85RGfo+7nw/+0v8AvWYyXo/4HOX0dP8A9Oz/AKSz/VpA8xuX7LTtNVa2uFmmc50Tc+Sh73DGzKxw4kll+CbLc3w3N3e0XA9TRbTGzKjOEtROGV9nKclF454a588dGUXvP/zmpx09ou/1JFjbi9rEIULRbTq9o02FCM3FTkorGI2Vy5TivPqsdH4Bna/ZxoNVpLNXsbUzudWXOmfOTSWWopxjOMsJtJp8WORVCWOb+S/mzqncB7Gc7J7MdasnBOyMHZF8Klybqn9XnLrhdTnntK2StLtPVUxWIqzjivBRtSsSXolPHyA17mbr3bT1MdPV7rxxWWNZjCtNJya8XzSS8W105tWJbu/uvpbJUXam+66EuCSXeS9/xinTWot55YTeHy6novo8bJjVoLtTJJSuta4s/m6lhfD3pWfgabN5t3Nmvj0lNd2oXOPdxlZLPn39uVH1abfowNe/u6+x9nbNnfDRqN1sOClWyslNTsjyfBZJpOCzJ5XWOPE+L9HThg9oXv8AN1Vfc+9k/wDTRXm+292o2lqHde8JZjXXHPBXHyXnJ+Mur9EklYvYPj2Lavn3cP8ATvAj9HG5y1mrcnmUqoyb827Mt/iX8c//AEbI/wB61T8qYL75/wCx0AAAAAAAAAAAAAAAAAAIxlkjKRKCAkAAAAAFebo9mkdnbSnqdPPOmnRZDgm8zrlKyuSSl9qGIvm+a5Zz1LDPm7x6zutLqLV9im2S9XGDaX34A432jqO8tss/TnOf70m/5miLP36mudWFZGLi1jkll45fWxnKPyX1cOMPMWsp+nTmvBgWb9Ha7G07E/taWxfNWUy/kzR9IKpLauf0tPVJ/fOP9KPydhOo4dsUr9OF0P8Axyn/AEH0PpDxl/acG4tL2atJtcnidmcPxxkCy+z+So3bjP8AR02qtf710zmQ6P2TZKG6bcouL9ivWGsPE3Yovn4NSTXmmjnACUpZLf8Ao/Rc4bTpj9eyitRzyWcXRX4zRTxaP0eNbwbSnBvlZp5pLzlGUJr8FIC2uzLs/hsqqTdneai1R7ySyoLhziEI+Sy+b5v06HtovKNbeTZFAZAAAAAACDefgBMEMEkwMgAAa5SyTaMRiAjEkAAAAAAADTfRGcZQnFSjJNOMlmLT5NNPqjcYaA567VNyvYZe0JOzSN4hHDbrnL7M2+q5e7J/B5eG6nvucnl4XklySXkl5Hae0tnVX0zougp12RcZRfin6+D8U+qfM5L383Us2drJ6eWZQ+vVN/breeF/tLDi15p+gH7OyO7g2xo3/mSj+/XOP9R01vJuvpddGuOpqViqsVkPBprrFvxhJcnHo+XkscwdllXFtbRL/OUv3U5fyOuAPEds9vBsXVcPLKqgvhK6uLX3NnKh1N24QzsbU+jof/nrX8zlkDZpqJWTjXCLlOclGMYrLlKTwkl4ttnTXZb2dQ2dWrbUp6ya96XVVJ/m4P8AjLx+HXzvYPuIq61tG+P5Safs6a+pB8nZ8Zc0v1ef2i5Ix+8BGJIAAAAAAAEI/iTMNARJJBIyAAAAAAAAAAAAAAAAAK+7at1PbdBKyEc36bNsMdXBL8rD1zFZS84IsEw0BzD2F6Tvdr1S/wAKF1j9fcdab9c2L/7r0+Vf2Xbl+xbR2nZw4rjONNL/AFJpXuPyjKlfFPyLQA852j6Tvdl62GMv2eySXrCPGvnmKOZ+zrdd7Q11VD/4ee8t9KoY4unNZeIJ+c15HXFtalFxaymmmvRrDK17Fdz5aKOsnYn3jvnRFvxqpbSkvJSbb+EYgWXVWopRikopJJJYSS5JJeCJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACLYEgQ4SUWBkAAAAAAMNgZZGDyRk8k4oDIAAAAAAQfP4ATBDh+8lFgZAAAAAACMpAJy+8yjWlk2gAAAIkjDQESSQSMgAAAAABs1uWSbRiMQEYkgAAAAAAAQRMw0BHBJIJGQAAAAACMpEFzNko5CQBIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/2Q=="
-                alt="Team Sparta Logo" width="60" height="60">
-            <p class="position-absolute end-0 top-50 translate-middle-y m-0 pe-3 text-body-secondary">
-                Copyrightⓒ2025
-                TeamSparta All rights reserved.</p>
-        </footer>
-    </div>
+        </section>
+        <section id="section4">
+            <div class="wrapper">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="./src/image/kuandyk-photo.png"
+                        alt="Profile Image" />
+                </div>
+                <div class="profile-content">
+                    <div class="role">Warrior Hero</div>
+                    <div class="name">구안득</div>
+                    <div class="description">
+                        The bravest of Sparta. He stood with only 300 against an army of thousands. His courage,
+                        determination, and leadership still echo through history.
+                    </div>
+                    <div class="buttons">
+                        <a href="https://github.com/4x2vk">
+                           <button class="btn btn-primary">Github</button> 
+                        </a>
+                        <a href="https://velog.io/@alphasapiens">
+                            <button class="btn btn-secondary">Blog</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section id="section5">
+        <div class="wrapper">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="https://img.goodfon.com/original/1920x1080/0/6d/sparta-dospekhi-oruzhie-voin.jpg"
+                        alt="Profile Image" />
+                </div>
+                <div class="profile-content">
+                    <div class="role">Warrior Hero</div>
+                    <div class="name">이동찬</div>
+                    <div class="description">
+                        The bravest of Sparta. He stood with only 300 against an army of thousands. His courage,
+                        determination, and leadership still echo through history.
+                    </div>
+                    <div class="buttons">
+                        <a href="https://github.com/ckscks7878jj">
+                           <button class="btn btn-primary">Github</button> 
+                        </a>
+                        <a href="https://twodc.tistory.com/">
+                            <button class="btn btn-secondary">Blog</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
 
+        <div class="container">
+            <footer class="py-3 border-top position-relative text-center">
+                <img src="data:image/jpeg;base64,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"
+                    alt="Team Sparta Logo" width="60" height="60">
+                <p class="position-absolute end-0 top-50 translate-middle-y m-0 pe-3 text-body-secondary">
+                    Copyrightⓒ2025
+                    TeamSparta All rights reserved.</p>
+            </footer>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-cVKIPhG81rIYkF0T3G1gbU6UrxpPJ/boP3tyG7Ht4E6L/uAm6GU6T12QJ6Z+J71"
-        crossorigin="anonymous"></script> <!-- JS 파일 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-cVKIPhG81rIYkF0T3G1gbU6UrxpPJ/boP3tyG7Ht4E6L/uAm6GU6T12QJ6Z+J71"
+            crossorigin="anonymous"></script> <!-- JS 파일 -->
 
-    <script>
-        const navButtons = document.querySelectorAll('.side-nav button');
-        const sections = document.querySelectorAll('.page-section');
+        <script>
+            const navButtons = document.querySelectorAll('.side-nav button');
+            const sections = document.querySelectorAll('.page-section');
 
-        // 스크롤 시 활성 버튼 전환
-        window.addEventListener('scroll', () => {
-            let index = sections.length;
-            while (--index >= 0) {
-                const rect = sections[index].getBoundingClientRect();
-                if (rect.top <= window.innerHeight / 2) {
-                    navButtons.forEach(btn => btn.classList.remove('active'));
-                    document.querySelector(`.side-nav button[data-target="${sections[index].id}"]`)?.classList.add('active');
-                    break;
+            // 스크롤 시 활성 버튼 전환
+            window.addEventListener('scroll', () => {
+                let index = sections.length;
+                while (--index >= 0) {
+                    const rect = sections[index].getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 2) {
+                        navButtons.forEach(btn => btn.classList.remove('active'));
+                        document.querySelector(`.side-nav button[data-target="${sections[index].id}"]`)?.classList.add('active');
+                        break;
+                    }
                 }
-            }
-        });
+            });
 
-        // 버튼 클릭 시 이동
-        navButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.getElementById(btn.dataset.target).scrollIntoView({
-                    behavior: 'smooth'
+            // 버튼 클릭 시 이동
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.getElementById(btn.dataset.target).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
-        });
-    </script>
+        </script>
 
 </body>
