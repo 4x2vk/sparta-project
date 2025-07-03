@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sparta</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/teams/team-2/assets/css/team-2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -68,49 +68,146 @@
             margin-right: 15px;
         }
 
+        footer {
+            margin-top: 70px;
+        }
 
+        #carouselExampleCaptions {
+            max-width: 1100px;
+            /* 원하는 최대 너비 */
+            margin: 0 auto;
+            margin-bottom: 30px;
+            /* 중앙 정렬 */
+        }
 
+        #carouselExampleCaptions .carousel-item img {
+            max-height: 500px;
+            /* 원하는 최대 높이 */
+            object-fit: cover;
+            /* 비율 유지하며 잘림 */
+            padding: 40px;
+        }
+
+        .featurette-image {
+            margin-top: 150px;
+            border-radius: 20px;
+            /* 원하는 둥근 정도로 조절 */
+            overflow: hidden;
+            /* 둥근 모서리가 잘릴 수 있게 */
+        }
+
+        .side-nav {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9999;
+        }
+
+        .side-nav button {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ccc;
+            /* 회색 */
+            border: none;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+
+        .side-nav button:hover {
+            opacity: 1;
+            background-color: #999;
+        }
+
+        .side-nav button.active {
+            background-color: #0d6efd;
+            opacity: 1;
+        }
+        
     </style>
+
+
     <script>
 
     </script>
 </head>
 
 <body>
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> <a href="현재 페이지로 가는 링크 넣어야함"
-            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> <svg
-                class="bi me-2" width="40" height="32" aria-hidden="true">
-                <use xlink:href="#bootstrap"></use>
-            </svg> <span class="fs-4">Team Sparta</span> </a>
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="https://github.com/4x2vk/sparta-project" class="nav-link active"
-                    aria-current="page" style="background-color: red; color: white;">Github</a></li>
-            <li class="nav-item"><a
-                    href="https://www.notion.so/native/teamsparta/9-2222dc3ef5148057a35ee8502c0d726a?deepLinkOpenNewTab=true"
-                    class="nav-link" style="color: red;">Notion</a></li>
-        </ul>
-    </header>
 
-    <div class="cover">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">This is Sparta!</h1>
-                <p class="lead">버그도 계획이 있었다. 우리한테 쳐맞기 전까지는</p>
-            </div>
+    <section id="section1">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> <a href="현재 페이지로 가는 링크 넣어야함"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> <svg
+                    class="bi me-2" width="40" height="32" aria-hidden="true">
+                    <use xlink:href="#bootstrap"></use>
+                </svg> <span class="fs-4">Team Sparta</span> </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="https://github.com/4x2vk/sparta-project" class="nav-link active"
+                        aria-current="page" style="background-color: red; color: white;">Github</a></li>
+                <li class="nav-item"><a
+                        href="https://www.notion.so/native/teamsparta/9-2222dc3ef5148057a35ee8502c0d726a?deepLinkOpenNewTab=true"
+                        class="nav-link" style="color: red;">Notion</a></li>
+            </ul>
+        </header>
+
+        <div class="side-nav">
+            <button data-target="section1"></button>
+            <button data-target="section2"></button>
+            <button data-target="section3"></button>
+            <button data-target="section4"></button>
+            <button data-target="section5"></button>
         </div>
-    </div>
 
-    <section class="py-3 py-md-5 py-xl-8">
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div>
-                    <h2 class="fs-6 text-secondary mb-2 text-uppercase text-center">Our Team</h2>
-                    <p class="display-5 mb-4 mb-md-5 text-center">저희 팀은 스파르타 전사들처럼<br>강한 집중력과 팀워크로 뭉친 팀입니다.<br>
-                        빠르게 배우고, 끈질기게 해결하며, 함께 성장합니다.</p>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://img.goodfon.com/original/1920x1080/0/6d/sparta-dospekhi-oruzhie-voin.jpg"
+                        class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhfZnk8-BUCHZXitIVNlqy8BTEM68orGmrag&s"
+                        class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.goodfon.com/original/1920x1080/0/6d/sparta-dospekhi-oruzhie-voin.jpg"
+                        class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-
         <div class="container overflow-hidden">
             <div class="row gy-4 gy-lg-0">
                 <div class="col-12 col-lg-3">
@@ -276,17 +373,120 @@
         </div>
     </section>
 
+    <section id="section2">
+        <div class="team intro">
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span
+                            class="text-body-secondary">See for yourself.</span></h2>
+                    <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
+                        how
+                        this layout would work with some actual real-world content in place.</p>
+                </div>
+                <div class="col-md-5 order-md-1"> <svg aria-label="Placeholder: 500x500"
+                        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" height="500"
+                        preserveAspectRatio="xMidYMid slice" role="img" width="500" xmlns="http://www.w3.org/2000/svg">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                    </svg> </div>
+            </div>
+    </section>
 
-    <div class="container">
-        <footer class="py-3 border-top position-relative text-center">
-            <img src="data:image/jpeg;base64,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"
-                alt="Team Sparta Logo" width="60" height="60">
-            <p class="position-absolute end-0 top-50 translate-middle-y m-0 pe-3 text-body-secondary">Copyrightⓒ2025
-                TeamSparta All rights reserved.</p>
-        </footer>
-    </div>
+    <section id="section3">
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
+                        class="text-body-secondary">It’ll blow your mind.</span></h2>
+                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
+                    prose here.</p>
+            </div>
+            <div class="col-md-5"> <svg aria-label="Placeholder: 500x500"
+                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" height="500"
+                    preserveAspectRatio="xMidYMid slice" role="img" width="500" xmlns="http://www.w3.org/2000/svg">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+                        fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                </svg> </div>
+        </div>
+    </section>
 
+    <section id="section4">
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span
+                        class="text-body-secondary">See for yourself.</span></h2>
+                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place.</p>
+            </div>
+            <div class="col-md-5 order-md-1"> <svg aria-label="Placeholder: 500x500"
+                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" height="500"
+                    preserveAspectRatio="xMidYMid slice" role="img" width="500" xmlns="http://www.w3.org/2000/svg">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+                        fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                </svg> </div>
+        </div>
+
+        <section id="section5">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
+                            class="text-body-secondary">It’ll blow your mind.</span></h2>
+                    <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
+                        prose here.</p>
+                </div>
+                <div class="col-md-5"> <svg aria-label="Placeholder: 500x500"
+                        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" height="500"
+                        preserveAspectRatio="xMidYMid slice" role="img" width="500" xmlns="http://www.w3.org/2000/svg">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                    </svg> </div>
+            </div>
+            </div>
+
+
+            <div class="container">
+                <footer class="py-3 border-top position-relative text-center">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Team Sparta Logo" width="60" height="60">
+                    <p class="position-absolute end-0 top-50 translate-middle-y m-0 pe-3 text-body-secondary">
+                        Copyrightⓒ2025
+                        TeamSparta All rights reserved.</p>
+                </footer>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-cVKIPhG81rIYkF0T3G1gbU6UrxpPJ/boP3tyG7Ht4E6L/uAm6GU6T12QJ6Z+J71"
+            crossorigin="anonymous"></script> <!-- JS 파일 -->
+
+        <script>
+            const navButtons = document.querySelectorAll('.side-nav button');
+            const sections = document.querySelectorAll('.page-section');
+
+            // 스크롤 시 활성 버튼 전환
+            window.addEventListener('scroll', () => {
+                let index = sections.length;
+                while (--index >= 0) {
+                    const rect = sections[index].getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 2) {
+                        navButtons.forEach(btn => btn.classList.remove('active'));
+                        document.querySelector(`.side-nav button[data-target="${sections[index].id}"]`)?.classList.add('active');
+                        break;
+                    }
+                }
+            });
+
+            // 버튼 클릭 시 이동
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.getElementById(btn.dataset.target).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
 
 </body>
-
-</html>
