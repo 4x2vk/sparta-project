@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sparta</title>
     <link rel="icon" type="image/x-icon" href="./src/image/favicon_transparent_zoomed.ico">
+
+    <!-- Bootstrap 5.0.2를 사용 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/teams/team-2/assets/css/team-2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,7 +27,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-
             margin: 0px 20px 0px 20px;
         }
 
@@ -40,11 +41,57 @@
             object-fit: cover;
         }
 
+        /* 팀원 프로필 카드 */
         .card {
             border-radius: 15px;
             overflow: hidden;
             max-width: 320px;
             margin: 0 auto 40px auto;
+        }
+
+        .card-body {
+            margin-top: 20px;
+        }
+
+        .flip-card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            margin-bottom: 25px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover.flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+
+        }
+
+        .flip-card-front {
+            background: white;
+        }
+
+        .flip-card-back {
+            background: whitesmoke;
+            transform: rotateY(180deg);
         }
 
         .nav {
@@ -55,6 +102,7 @@
             margin-top: 70px;
         }
 
+        /* 이미지 슬라이더 설정 */
         #carouselExampleCaptions {
             max-width: 1100px;
             /* 원하는 최대 너비 */
@@ -79,6 +127,7 @@
             /* 둥근 모서리가 잘릴 수 있게 */
         }
 
+        /* 오른쪽 섹션 이동 버튼 */
         .side-nav {
             position: fixed;
             top: 50%;
@@ -107,19 +156,7 @@
             background-color: #999;
         }
 
-        .side-nav button.active {
-            background-color: #0d6efd;
-            opacity: 1;
-        }
-
-        .mx-auto {
-            border-radius: 50%;
-            width: 400px;
-            height: 400px;
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
             background-color: #fff;
             display: flex;
             justify-content: center;
@@ -127,6 +164,7 @@
             min-height: 100vh;
         }
 
+        /* 팀원 상세 프로필 */
         .profile-container {
             display: flex;
             align-items: center;
@@ -215,7 +253,6 @@
         .btn-secondary:hover {
             background-color: #F8EEDF;
             color: #333;
-            ;
         }
 
         .wrapper {
@@ -224,6 +261,7 @@
             align-items: center;
             background-color: #fff;
             padding: 10px;
+            margin-bottom: 40px;
         }
 
         @media (max-width: 768px) {
@@ -231,10 +269,6 @@
                 flex-direction: column;
                 text-align: center;
             }
-        }
-
-        .text-center mb-4 {
-            font-weight: bold;
         }
 
         .carousel-caption {
@@ -245,52 +279,8 @@
             text-shadow: 2px 2px 8px black;
         }
 
-        .wrapper {
-            margin-bottom: 45px;
-        }
-
         .fw-bold {
-            margin-bottom: 45px;
-        }
-
-        .flip-card {
-            width: 300px;
-            height: 400px;
-            perspective: 1000px;
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 16px;
-
-        }
-
-        .flip-card-front {
-            background: white;
-        }
-
-        .flip-card-back {
-            background: whitesmoke;
-            transform: rotateY(180deg);
+            margin-bottom: 40px;
         }
 
         .shadow>p {
@@ -298,19 +288,15 @@
             margin-top: 130px;
         }
     </style>
-
-    <script>
-
-    </script>
 </head>
 
 <body>
     <section id="section1">
+        <!-- 왼쪽 상단 팀 이름 -->
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> <a
-                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> <svg
-                    class="bi me-2" width="40" height="32" aria-hidden="true">
-                    <use xlink:href="#bootstrap"></use>
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 </svg> <span class="fs-4">Team Sparta</span> </a>
+            <!-- 팀의 GitHub와 Notion 링크 제공 -->
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="https://github.com/4x2vk/sparta-project" class="nav-link active"
                         aria-current="page" style="background-color: #a40000; color: white;">Project Github</a></li>
@@ -320,14 +306,15 @@
             </ul>
         </header>
 
+        <!-- 오른쪽 섹션 이동 버튼 -->
         <div class="side-nav">
             <button data-target="section1"></button>
             <button data-target="section2"></button>
             <button data-target="section3"></button>
             <button data-target="section4"></button>
-            <button data-target="section5"></button>
         </div>
 
+        <!-- 슬라이드 이미지 및 슬로건, 애니메이션 -->
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -364,6 +351,7 @@
                     </div>
                 </div>
             </div>
+            <!-- <, > 부분 구현 -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -375,6 +363,8 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+        <!-- 팀원 소개 카드  -->
         <div class="container">
             <div class="row gy-4 gy-lg-0">
                 <div class="flip-card">
@@ -385,7 +375,7 @@
                                     <img class="img-fluid rounded-top-4 bsb-scale bsb-hover-scale-up card-image-custom"
                                         loading="lazy" src="https://wallpapercave.com/wp/wp10536948.jpg" alt="이동찬">
                                 </figure>
-                                <div class="card-body bg-white p-3" style="margin-top: 20px;">
+                                <div class="card-body bg-white p-3">
                                     <h2 class="card-title h5 fw-bold mb-2">이동찬</h2>
                                     <p class="card-text text-secondary">이..일단 돌아가게 만들어주마...</p>
                                     <img src="./src/image/leedongchan_zep.gif" style="width:60px;">
@@ -393,6 +383,7 @@
                             </div>
                         </div>
 
+                        <!-- 뒷부분 구현 -->
                         <div class="flip-card-back border rounded-4 overflow-hidden">
                             <div class="card-body shadow h-100">
                                 <h3 class="card-title h5 fw-bold mb-2">이동찬</h3>
@@ -414,7 +405,7 @@
                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzzTzP_xAN18Q6DmTYKAt4GSS0MoN-25tbJA&s"
                                         alt="박은지">
                                 </figure>
-                                <div class="card-body bg-white p-3" style="margin-top: 20px;">
+                                <div class="card-body bg-white p-3">
                                     <h2 class="card-title h5 fw-bold mb-2">박은지</h2>
                                     <p class="card-text text-secondary">팀원 간 의견 충돌 내가 다 막는다!</p>
                                     <img src="./src/image/parkeunji_zep.gif" style="width:60px;">
@@ -422,6 +413,7 @@
                             </div>
                         </div>
 
+                        <!-- 뒷부분 구현 -->
                         <div class="flip-card-back border rounded-4 overflow-hidden">
                             <div class="card-body shadow h-100">
                                 <h3 class="card-title h5 fw-bold mb-2">박은지</h3>
@@ -443,7 +435,7 @@
                                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhfZnk8-BUCHZXitIVNlqy8BTEM68orGmrag&s"
                                         alt="유운선">
                                 </figure>
-                                <div class="card-body bg-white p-3" style="margin-top: 20px;">
+                                <div class="card-body bg-white p-3">
                                     <h2 class="card-title h5 fw-bold mb-2">유운선</h2>
                                     <p class="card-text text-secondary">로그 한 줄로 범인을 잡아낸다!</p>
                                     <img src="./src/image/yoowoonseon_zep.gif" style="width:60px;">
@@ -451,6 +443,7 @@
                             </div>
                         </div>
 
+                        <!-- 뒷부분 구현 -->
                         <div class="flip-card-back border rounded-4 overflow-hidden">
                             <div class="card-body shadow h-100">
                                 <h3 class="card-title h5 fw-bold mb-2">유운선</h3>
@@ -468,9 +461,9 @@
                                     <img class="img-fluid rounded-top-4 bsb-scale bsb-hover-scale-up card-image-custom"
                                         loading="lazy"
                                         src="https://mblogthumb-phinf.pstatic.net/MjAyMTA4MTFfMjcz/MDAxNjI4NjU0MjIxMDQx.1XP-hnQKUX8b5LJgRbigB0W3jEBG4oWY9tOrFSDMODkg.JT7OM2dQtUW7pHn7A3hHw6lbHjq5sd9QbaxvjyYlBiIg.PNG.lhswind2/image.png?type=w800"
-                                        alt="유운선">
+                                        alt="구안득">
                                 </figure>
-                                <div class="card-body bg-white p-3" style="margin-top: 20px;">
+                                <div class="card-body bg-white p-3">
                                     <h2 class="card-title h5 fw-bold mb-2">구안득</h2>
                                     <p class="card-text text-secondary">오늘도 버그는 그를 피해 달아난다!</p>
                                     <img src="./src/image/kuandyk_zep.gif" style="width:60px;">
@@ -478,6 +471,7 @@
                             </div>
                         </div>
 
+                        <!-- 뒷부분 구현 -->
                         <div class="flip-card-back border rounded-4 overflow-hidden">
                             <div class="card-body shadow h-100">
                                 <h3 class="card-title h5 fw-bold mb-2">구안득</h3>
@@ -488,6 +482,7 @@
                 </div>
             </div>
         </div>
+
         <section id="section2">
             <div class="wrapper">
                 <div class="profile-container">
@@ -515,6 +510,7 @@
                 </div>
             </div>
         </section>
+
         <section id="section3">
             <div class="wrapper">
                 <div class="profile-container">
@@ -539,6 +535,7 @@
                 </div>
             </div>
         </section>
+
         <section id="section4">
             <div class="wrapper">
                 <div class="profile-container">
@@ -565,69 +562,74 @@
                 </div>
             </div>
         </section>
-        <section id="section5">
-            <div class="wrapper">
-                <div class="profile-container">
-                    <div class="profile-img">
-                        <img src="./src/image/kuandyk-photo.png" alt="Profile Image" />
+
+        <div class="wrapper">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="./src/image/kuandyk-photo.png" alt="Profile Image" />
+                </div>
+                <div class="profile-content">
+                    <div class="role">Warrior Hero</div>
+                    <div class="name">구안득</div>
+                    <div class="description">MBTI : ENFP<br>관심사 : 인공지능 기술 개발, 스타트업 창업, 디자인과 개발 통합
+                        (fullStack)<br>강점
+                        : 빠른 학습력과 다양한 언어 구사, 콘텐츠 마케팅 감각 (Reels, SMM 전략 등)<br>목표 : 성공적인 취업과 AI 서비스를 개발하는 것
+                        입니다.<br>한마디 : 나는 불가능을 가능으로 바꾸는 사람입니다.
                     </div>
-                    <div class="profile-content">
-                        <div class="role">Warrior Hero</div>
-                        <div class="name">구안득</div>
-                        <div class="description">MBTI : ENFP<br>관심사 : 인공지능 기술 개발, 스타트업 창업, 디자인과 개발 통합
-                            (fullStack)<br>강점
-                            : 빠른 학습력과 다양한 언어 구사, 콘텐츠 마케팅 감각 (Reels, SMM 전략 등)<br>목표 : 성공적인 취업과 AI 서비스를 개발하는 것
-                            입니다.<br>한마디 : 나는 불가능을 가능으로 바꾸는 사람입니다.
+                    <div class="buttons">
+                        <a href="https://github.com/4x2vk">
+                            <button class="btn btn-primary">Github</button>
+                        </a>
+                        <a href="https://velog.io/@alphasapiens">
+                            <button class="btn btn-secondary">Blog</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 기술 스택 카드 -->
+        <hr class="my-4 border-dark">
+        <section class="container my-5">
+            <h2 class="text-center fw-bold">🛠 기술 Stack</h2>
+            <div class="row justify-content-center mb-4">
+
+                <!-- HTML5 카드 -->
+                <div class="col-6 col-md-4">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="src/image/icon_html.png" alt="HTML5" style="width: 50px; height: 50px;">
+                            <p class="mt-3 fw-bold">HTML5</p>
+                            <p>웹 페이지의 구조를 HTML5로 설계하였습니다.</p>
                         </div>
-                        <div class="buttons">
-                            <a href="https://github.com/4x2vk">
-                                <button class="btn btn-primary">Github</button>
-                            </a>
-                            <a href="https://velog.io/@alphasapiens">
-                                <button class="btn btn-secondary">Blog</button>
-                            </a>
+                    </div>
+                </div>
+
+                <!-- CSS3 카드 -->
+                <div class="col-6 col-md-4">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="src/image/icon_css.png" alt="CSS3" style="width: 50px; height: 50px;">
+                            <p class="mt-3 fw-bold">CSS3</p>
+                            <p>CSS3를 활용해 디자인과 레이아웃을 구성하였습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript 카드 -->
+                <div class="col-6 col-md-4">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-body">
+                            <img src="src/image/icon_javascript.svg" alt="JavaScript"
+                                style="width: 50px; height: 50px;">
+                            <p class="mt-3 fw-bold">JavaScript</p>
+                            <p>JavaScript로 동적인 기능과 사용자와의 상호작용을 구현하였습니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <hr class="my-4 border-dark">
-            <section class="container my-5">
-                <h2 class="text-center fw-bold">🛠 기술 Stack</h2>
-                <div class="row justify-content-center mb-4">
-                    <!-- HTML5 카드 -->
-                    <div class="col-6 col-md-4">
-                        <div class="card h-100 text-center shadow-sm">
-                            <div class="card-body">
-                                <img src="src/image/icon_html.png" alt="HTML5" style="width: 50px; height: 50px;">
-                                <p class="mt-3 fw-bold">HTML5</p>
-                                <p>웹 페이지의 구조를 HTML5로 설계하였습니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- CSS3 카드 -->
-                    <div class="col-6 col-md-4">
-                        <div class="card h-100 text-center shadow-sm">
-                            <div class="card-body">
-                                <img src="src/image/icon_css.png" alt="CSS3" style="width: 50px; height: 50px;">
-                                <p class="mt-3 fw-bold">CSS3</p>
-                                <p>CSS3를 활용해 디자인과 레이아웃을 구성하였습니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- JavaScript 카드 -->
-                    <div class="col-6 col-md-4">
-                        <div class="card h-100 text-center shadow-sm">
-                            <div class="card-body">
-                                <img src="src/image/icon_javascript.svg" alt="JavaScript"
-                                    style="width: 50px; height: 50px;">
-                                <p class="mt-3 fw-bold">JavaScript</p>
-                                <p>JavaScript로 동적인 기능과 사용자와의 상호작용을 구현하였습니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
+            <!-- 저작권 및 팀 로고 표시 -->
             <div class="container">
                 <footer class="py-3 border-top position-relative text-center">
                     <img src="data:image/jpeg;base64,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"
@@ -638,22 +640,8 @@
             </div>
             <script>
                 const navButtons = document.querySelectorAll('.side-nav button');
-                const sections = document.querySelectorAll('.page-section');
 
-                // 스크롤 시 활성 버튼 전환
-                window.addEventListener('scroll', () => {
-                    let index = sections.length;
-                    while (--index >= 0) {
-                        const rect = sections[index].getBoundingClientRect();
-                        if (rect.top <= window.innerHeight / 2) {
-                            navButtons.forEach(btn => btn.classList.remove('active'));
-                            document.querySelector(`.side-nav button[data-target="${sections[index].id}"]`)?.classList.add('active');
-                            break;
-                        }
-                    }
-                });
-
-                // 버튼 클릭 시 이동
+                // 버튼 클릭 시 해당 섹션으로 이동
                 navButtons.forEach(btn => {
                     btn.addEventListener('click', () => {
                         document.getElementById(btn.dataset.target).scrollIntoView({
